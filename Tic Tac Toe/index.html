@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="start-screen">
+      <div class="start-card">
+        <h1>Tic Tac Toe</h1>
+        <div class="controls">
+          <div class="form-group">
+            <label for="playerX">Player 1 Name:</label>
+            <input type="text" id="playerX" placeholder="Enter Player 1 Name" />
+          </div>
+          <div class="form-group">
+            <label for="opponent">Opponent:</label>
+            <select id="opponent">
+              <option value="human">Player 2</option>
+              <option value="ai">AI</option>
+            </select>
+          </div>
+          <div class="form-group" id="playerO-group">
+            <label for="playerO">Player 2 Name:</label>
+            <input type="text" id="playerO" placeholder="Enter Player 2 Name" />
+          </div>
+          <div
+            class="form-group"
+            id="ai-difficulty-group"
+            style="display: none"
+          >
+            <label for="aiDifficulty">AI Difficulty:</label>
+            <select id="aiDifficulty">
+              <option value="easy">Easy</option>
+              <option value="medium">Medium</option>
+              <option value="hard">Hard</option>
+            </select>
+          </div>
+          <button id="start">Start Game</button>
+        </div>
+      </div>
+      <div class="top-right">
+        <button id="mute-toggle">🔊</button>
+      </div>
+    </div>
+
+    <div id="game-screen" style="display: none">
+      <div class="top-bar">
+        <h1 id="names-display"></h1>
+        <div class="top-right">
+          <button id="mute-toggle">🔊</button>
+        </div>
+      </div>
+
+      <div class="scoreboard">
+        <span><span id="x-name">X</span>: <span id="x-score">0</span></span>
+        <span><span id="o-name">O</span>: <span id="o-score">0</span></span>
+        <span>Draws: <span id="draw-score">0</span></span>
+      </div>
+
+      <div class="button-group">
+        <button id="reset-scores">Reset Scores</button>
+        <button id="reset-game">Reset Game</button>
+      </div>
+
+      <div class="container" id="board"></div>
+
+      <div class="popup hide" id="popup">
+        <div id="message"></div>
+        <button id="new-game">New Game</button>
+      </div>
+    </div>
+
+    <audio id="click-sound" src="sound/click.mp3"></audio>
+    <audio id="win-sound" src="sound/win.mp3"></audio>
+    <audio id="draw-sound" src="sound/draw.mp3"></audio>
+    <audio id="bg-music" src="sound/background.mp3" loop></audio>
+
+    <script src="script.js"></script>
+  </body>
+</html>
